@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "role": "Sales user",
+      "firstName": "kiran",
+      "lastName": "Adhavade",
+      "place": "For the Sales user",
+      "email": "kirana@incubxperts.com",
+      "password": "Qwerty@123"
+    },
+    {
+      "role": "Manager",
+      "place": "For the manager",
+      "email": "shivani@yopmail.com",
+      "password": "Qwerty@123"
+    },
+    {
+      "role": "Super Manager",
+      "place": "For the super manager",
+      "email": "atharvam@incubxperts.com",
+      "password": "Qwerty@123"
+    }
+  ]
+}
