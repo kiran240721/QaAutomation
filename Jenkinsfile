@@ -3,7 +3,7 @@ pipeline{
 
     parameters{
         string(name: 'SPEC', defaultValue: "cypress/intigration/**/**", description: "enter the script path")
-        choice(name: 'BROWSER', choice: ['chrome','edge','firefox'], description: "choice the browser")
+        choice(name: 'BROWSER', choices: ['chrome','edge','firefox'], description: "chose the browser")
     }
 
     options{
