@@ -56,7 +56,7 @@ module.exports = defineConfig({
     embeddedScreenshots: true,
     inlineAssets: true, //Adds the asserts inline
     overwrite: false,
-    html: false,
+    html: true,
     json: true,
     charts: true,
     video: true
