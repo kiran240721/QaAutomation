@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-15T11:40:19.067Z",
+    "end": "2024-05-15T11:41:55.310Z",
+    "duration": 96243,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "494fa34c-d396-48ba-b2bb-4e2343101ddd",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Dashboard.js",
+      "file": "cypress\\integration\\examples\\Dashboard.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e20ba497-096e-4fbe-858f-691ce568d56f",
+          "title": "Dashboard page verification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dashboard page Charts and graphs",
+              "fullTitle": "Dashboard page verification Dashboard page Charts and graphs",
+              "timedOut": null,
+              "duration": 89759,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\Dashboard.js\"\n}",
+              "code": "//cy.visit('https://solclearskyqa.azurewebsites.net/Identity/Account/Login');\ncy.visit(Cypress.env('url') + \"/Identity/Account/Login\");\n//cy.visit('/Identity/Account/Login');\n//cy.visit(`${Cypress.env('baseUrl')}/login`);\ncy.fixture('example').then(exampleData => {\n  // Extract the credentials of the user at the 2nd index\n  const user = exampleData.users[2]; // Index 1 corresponds to the 2nd user\n  const {\n    email,\n    password\n  } = user;\n  cy.loginAsSalesUser(user.email, user.password);\n});\ncy.contains('Dashboard').should('be.visible');\nconsole.log('login as a user');\ncy.get('#VolumeBarChart').should('exist');",
+              "err": {},
+              "uuid": "b0542fbb-a624-419a-b645-25c1409431f2",
+              "parentUUID": "e20ba497-096e-4fbe-858f-691ce568d56f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b0542fbb-a624-419a-b645-25c1409431f2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 89759,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "charts": true,
+        "reportPageTitle": "Cypress Inline Reporter",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "video": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

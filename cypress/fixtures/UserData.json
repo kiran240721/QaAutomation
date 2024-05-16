@@ -1,0 +1,42 @@
+{
+    "salesUser": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@gmail.com",
+      "username": "sales_user",
+      "phoneNumber": "1234567890",
+      "country": "Bermuda",
+      "roc": "SOL_WC",
+      "manager": "Christian Porter",
+      "autoPlanCreation": true,
+      "isActive": true,
+      "roles": ["Sales Person"]
+    },
+    "managerUser": {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "janesmith@gmail.com",
+      "username": "manager_user",
+      "phoneNumber": "9876543210",
+      "country": "Anguilla",
+      "roc": "SOL_FC",
+      "manager": "Christian Porter",
+      "autoPlanCreation": true,
+      "isActive": true,
+      "roles": ["Manager"]
+    },
+    "superManagerUser": {
+      "firstName": "Super",
+      "lastName": "Admin",
+      "email": "superadmin@gmail.com",
+      "username": "super_manager_user",
+      "phoneNumber": "5555555555",
+      "country": "Bolivia",
+      "roc": "SOL_EC",
+      "manager": "Christian Porter",
+      "autoPlanCreation": true,
+      "isActive": true,
+      "roles": ["Super Manager"]
+    }
+  }
+  

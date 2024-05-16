@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-15T14:06:12.047Z",
+    "end": "2024-05-15T14:06:33.414Z",
+    "duration": 21367,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e4052973-bbbd-4945-92e8-5118fa57c02b",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\SearchOpprtunitiesByValues.js",
+      "file": "cypress\\integration\\examples\\SearchOpprtunitiesByValues.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "af3e7447-27da-41b9-a830-f5934a6782e0",
+          "title": "Search opportunities - by Value",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Search opportunities by Value",
+              "fullTitle": "Search opportunities - by Value Search opportunities by Value",
+              "timedOut": null,
+              "duration": 15941,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\SearchOpprtunitiesByValues.js\"\n}",
+              "code": "//cy.visit('https://solclearskyqa.azurewebsites.net/Identity/Account/Login');\ncy.visit(Cypress.env('url') + \"/Identity/Account/Login\");\n//cy.visit('/Identity/Account/Login');\n//cy.visit(`${Cypress.env('baseUrl')}/login`);\ncy.fixture('example').then(exampleData => {\n  // Extract the credentials of the user at the index\n  const user = exampleData.users[0]; // Index 1 corresponds to the 1st user\n  const {\n    email,\n    password\n  } = user;\n  cy.loginAsSalesUser(user.email, user.password);\n});\ncy.contains('Dashboard').should('be.visible');\nconsole.log('login as a user');\n_SerachOpprtunitiesByValuePage.default.clickOnOpprtunities();\n_SerachOpprtunitiesByValuePage.default.editOnSearch().click();\ncy.wait(2000);\nconst searchText = 'Engage'; // Text to search\n// Type the search text into the search box\n//cy.get('input[type=\"search\"]').type(searchText);\n// Submit the search form if needed\n// cy.get('form').submit();\n// Assert that the search results contain the search text\ncy.get('#example').should('contain', searchText);\ncy.get('#example').find('tr').filter(':contains(' + searchText + ')') // Filter rows containing the search text\n.its('length').then(count => {\n  // Log the total number of entries for the searched text\n  cy.log(`Total entries for \"${searchText}\": ${count}`);\n});",
+              "err": {},
+              "uuid": "58831f4d-98f9-45e6-a0d3-0bc47acfbd04",
+              "parentUUID": "af3e7447-27da-41b9-a830-f5934a6782e0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "58831f4d-98f9-45e6-a0d3-0bc47acfbd04"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15941,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "charts": true,
+        "reportPageTitle": "Cypress Inline Reporter",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "video": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

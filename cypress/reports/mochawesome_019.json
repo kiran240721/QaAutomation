@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-15T14:03:29.043Z",
+    "end": "2024-05-15T14:04:12.004Z",
+    "duration": 42961,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8fb8b22d-5b3e-4498-8c28-b69febe5ff2d",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\LoginMultipleUser.js",
+      "file": "cypress\\integration\\examples\\LoginMultipleUser.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "25a99f72-0a1c-4c07-b6d3-5dc211145c07",
+          "title": "Login as multiple users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "logs in as different users and logs out",
+              "fullTitle": "Login as multiple users logs in as different users and logs out",
+              "timedOut": null,
+              "duration": 38958,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\LoginMultipleUser.js\"\n}",
+              "code": "// Visit the login page\ncy.visit(Cypress.env('url'));\n//cy.visit('https://solclearskyqa.azurewebsites.net/Identity/Account/Login');\n// Perform login for each user\ncy.get('@userData').then(userData => {\n  if (!userData || !userData.users || userData.users.length === 0) {\n    // Handle case where userData is undefined or empty\n    throw new Error('User data is missing or empty');\n  }\n  userData.users.forEach(user => {\n    cy.get('#Input_Email').type(user.email);\n    cy.get('.btn').click();\n    //cy.wait(3000);\n    cy.get('.shivanand').clear().type(user.password);\n    cy.get('.btn-primary').click();\n    cy.wait(3000);\n    cy.contains('Dashboard').should('be.visible');\n    console.log(`Logged in as ${user.email}`);\n    // Click on the logout button\n    cy.get('#header > div.menu > div > a').click();\n    // Assert that the logout dropdown is visible\n    cy.get('#header > div.menu > div > div > form > button').should('be.visible');\n    // Click on the logout button inside the dropdown\n    cy.get('.dropdown-item').click();\n    // Assertions and logout process...\n    cy.url().should('include', '/Login');\n  });\n});",
+              "err": {},
+              "uuid": "9527ec2f-2d24-4163-b93d-d4df00c643fc",
+              "parentUUID": "25a99f72-0a1c-4c07-b6d3-5dc211145c07",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9527ec2f-2d24-4163-b93d-d4df00c643fc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 38958,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "charts": true,
+        "reportPageTitle": "Cypress Inline Reporter",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "video": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

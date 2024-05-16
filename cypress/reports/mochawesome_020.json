@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-15T14:04:22.232Z",
+    "end": "2024-05-15T14:05:03.465Z",
+    "duration": 41233,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "36aa3d25-e1c0-4620-94d4-522fc4b4d8f8",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Opprtunities.js",
+      "file": "cypress\\integration\\examples\\Opprtunities.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4304feb3-b100-4a7e-8275-ca0f5d1c992c",
+          "title": "Create a new opprtunities",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create new opprtunitie",
+              "fullTitle": "Create a new opprtunities Create new opprtunitie",
+              "timedOut": null,
+              "duration": 36544,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\Opprtunities.js\"\n}",
+              "code": "// const OpportunitiesPage = new OpportunitiesPage()\n// Visit the login page\n//cy.visit(Cypress.config('baseUrl'))\n// cy.visit({\n//   url: Cypress.config('baseUrl')\n// });\n//cy.visit('https://solclearskyqa.azurewebsites.net/Identity/Account/Login');\n//cy.visit(`${Cypress.env('baseUrl')}/login`);\ncy.visit(Cypress.env('url'));\ncy.fixture('User.json').then(users => {\n  users.forEach(user => {\n    cy.loginAsSalesUser(user.email, user.password);\n  });\n});\ncy.contains('Dashboard').should('be.visible');\nconsole.log('login as a sales user');\n_OpportunitiesPage.default.clickOnOpprtunities().click();\nlet firstPageContent;\ncy.get('#example').invoke('text').then(text => {\n  firstPageContent = text;\n});\n_OpportunitiesPage.default.clickOnNewOpprtunities().click();\ncy.wait(2000);\n_OpportunitiesPage.default.clickOnStatusSelect();\n_OpportunitiesPage.default.selectStage();\n_OpportunitiesPage.default.clcikOnSatage();\n_OpportunitiesPage.default.clickOnCompany();\ncy.wait(2000);\n_OpportunitiesPage.default.clickOnSelctCompany();\n//OpportunitiesPage.clickOnCompany().click()\n_OpportunitiesPage.default.clickOnNextButton().click();\ncy.wait(1000);\n_OpportunitiesPage.default.clickOnNewCustomer().click();\n_OpportunitiesPage.default.clickOnBusiness();\n//cy.getCurrentDate().then(date => {\n//cy.log('Current Date:', date);\n// You can use `date` in your test assertions or any other logic\n//});\n_OpportunitiesPage.default.getStartDate();\n//cy.get('#startDate').get('input[type=\"date\"]').should('exist').first().as('firstDateInput').invoke('val', '2024-05-02');\n// Click on the date containing the number 29 within the date picker popup\n//cy.contains('[data-testid=\"numberElement\"]', 29).click();\n// cy.window().then(popupWindow => {\n//   // const currentDate = new Date();\n//   // const formattedDate = currentDate.toDateString();\n//   // const formattedTime = currentDate.toLocaleTimeString();\n//   cy.get('input[type=\"date\"]').as('dateInput');\n//   cy.get('@dateInput').should('exist').first().as('firstDateInput');\n//   const currentDate = new Date();\n// // Format the current date as 'DD-MM-YYYY'\n// const year = currentDate.getFullYear();\n// const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Month is zero-based\n// const day = String(currentDate.getDate()).padStart(2, '0');\n// const formattedDate = `${year}-${month}-${day}`;\n// // Set the formatted date to the first date input field\n// cy.get('@firstDateInput').type(formattedDate);\n_OpportunitiesPage.default.clickOnSector();\n_OpportunitiesPage.default.getFirstScheduledDate();\n//cy.get('#FirstScheduledDate').get('input[type=\"date\"]').should('exist').last().as('lastDateInput').invoke('val', '2024-05-12');\n_OpportunitiesPage.default.clickOnTransication();\n_OpportunitiesPage.default.clickOnBusinessAndSelect();\n_OpportunitiesPage.default.clickOnNextButton().click();\n_OpportunitiesPage.default.clickOnAddproduct();\ncy.get('#modalLg > .modal-dialog > .modal-content').each($div => {\n  cy.wrap($div).within(() => {\n    cy.wait(1000);\n    _OpportunitiesPage.default.clickOnproductAndSelect();\n    _OpportunitiesPage.default.clickOnPotntialVol();\n    _OpportunitiesPage.default.clickOnTotalVol();\n    _OpportunitiesPage.default.clickOnVolUnit();\n    _OpportunitiesPage.default.clickOnMargin().click();\n  });\n  cy.wait(2000);\n  cy.wrap($div).within(() => {\n    //OpportunitiesPage.clickOnSaveAndAdd().click(); \n    cy.contains('Save And Close').click({\n      force: true\n    });\n  });\n  //cy.wait(2000)  \n  // cy.wrap($div).within(() =>{\n  //     //OpportunitiesPage.clickOnSaveAndAdd().click(); \n  //   OpportunitiesPage.clickOnClose().click()\n  //     });  \n});\n// Find the 'Save and Close' button within each modal footer\n// Ensure the modal is closed\n//cy.get('.modal-dialog').should('not.exist');\ncy.wait(4000);\n_OpportunitiesPage.default.clickOnNextButtonOfProduct();\ncy.wait(1000);\n_OpportunitiesPage.default.clickOnSubmitButton().click({\n  force: true\n});\ncy.wait(1000);\n//cy.log(`Selected company: ${randomOptionText}`);\n// Assert that the selected company is displayed\n// cy.get('.select2-selection__rendered').should('contain', randomOptionText);\n//cy.contains('Fleet card').should('be.visible');\n//   cy.get('table tbody tr') // Assuming table rows are inside tbody\n// .first() // Select the first row\n// .within(() => {\n//   // Within the first row, you can perform assertions on specific columns or data\n//   cy.get('td:nth-child(1)').should('contain', 'Test - Anguilla');\n// Add more assertions as needed for other columns\n//});\ncy.get('#example').should('not.contain', firstPageContent);",
+              "err": {},
+              "uuid": "878f7888-306f-4ba9-802a-cd5589301851",
+              "parentUUID": "4304feb3-b100-4a7e-8275-ca0f5d1c992c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "878f7888-306f-4ba9-802a-cd5589301851"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 36544,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "charts": true,
+        "reportPageTitle": "Cypress Inline Reporter",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "video": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

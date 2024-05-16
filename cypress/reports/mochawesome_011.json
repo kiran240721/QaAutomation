@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-15T11:51:06.793Z",
+    "end": "2024-05-15T11:51:43.962Z",
+    "duration": 37169,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "073ab3e7-7d25-467c-8b83-c891a0762dfa",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\SearchOpprtunitiesPagination.js",
+      "file": "cypress\\integration\\examples\\SearchOpprtunitiesPagination.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ef2a07fe-a3e7-495e-8361-4d4b8857bddc",
+          "title": "Search opportunities - pagination",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Pagination",
+              "fullTitle": "Search opportunities - pagination Pagination",
+              "timedOut": null,
+              "duration": 32669,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\SearchOpprtunitiesPagination.js\"\n}",
+              "code": "cy.visit(Cypress.env('url') + \"/Identity/Account/Login\");\ncy.fixture('example').then(exampleData => {\n  const user = exampleData.users[0];\n  const {\n    email,\n    password\n  } = user;\n  cy.loginAsSalesUser(user.email, user.password);\n});\ncy.contains('Dashboard').should('be.visible');\n_SerachOpprtunitiesByValuePage.default.clickOnOpprtunities();\n// Get the content of the first page before navigating\nlet firstPageContent;\ncy.get('#example').invoke('text').then(text => {\n  firstPageContent = text;\n});\n// Click on the next button\n_SerachOpprtunitiesByValuePage.default.clickOnNextButton();\ncy.wait(1000);\n// Wait for the content of the next page to load\ncy.get('#example_wrapper > div:nth-child(2) > div').should('not.contain', firstPageContent);\n// Click on the previous button\n_SerachOpprtunitiesByValuePage.default.clickOnPreviousButton().click();\ncy.wait(1000);\n// Assert that the content of the previous page is now visible again\ncy.get('#example_wrapper > div:nth-child(2) > div').should('not.contain', firstPageContent);",
+              "err": {},
+              "uuid": "c1ad537e-972b-4880-ba4a-8c6bf67464d3",
+              "parentUUID": "ef2a07fe-a3e7-495e-8361-4d4b8857bddc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c1ad537e-972b-4880-ba4a-8c6bf67464d3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32669,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "charts": true,
+        "reportPageTitle": "Cypress Inline Reporter",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "video": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
