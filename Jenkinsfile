@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'SPEC', defaultValue: "cypress/integration/**/**", description: "Enter the script path")
+        string(name: 'SPEC', defaultValue: "C:/Users/IncubXperts/Downloads/CearSky/cypress/integration/examples/**/**", description: "Enter the script path")
         choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "Choose the browser")
     }
 
@@ -35,7 +35,7 @@ pipeline {
                 allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
                 keepAll: true, 
-                reportDir: 'cypress/report', 
+                reportDir: 'cypress/reports', 
                 reportFiles: 'index.html', 
                 reportName: 'HTML Report', 
                 reportTitles: '', 
