@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'SPEC', defaultValue: "cypress/integration/examples/**/**", description: "Enter the script path")
+        string(name: 'SPEC', defaultValue: "C:/Users/IncubXperts/Downloads/CearSky/cypress/integration/examples/**/**", description: "Enter the script path")
         choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: "Choose the browser")
     }
 
