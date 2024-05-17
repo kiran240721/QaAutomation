@@ -33,10 +33,10 @@ pipeline {
         always {
             publishHTML([
                 allowMissing: false, 
-                alwaysLinkToLastBuild: false, 
+                alwaysLinkToLastBuild: true, 
                 keepAll: true, 
                 reportDir: 'cypress/reports', 
-                reportFiles: 'index.html', 
+                reportFiles: '*.html', 
                 reportName: 'HTML Report', 
                 reportTitles: '', 
                 useWrapperFileDirectly: true
