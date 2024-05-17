@@ -36,12 +36,12 @@ pipeline {
             alwaysLinkToLastBuild: true, 
             keepAll: true, 
             reportDir: 'cypress/reports', 
-            reportFiles: '*.html', 
+            reportFiles: '*.html',
             reportName: 'HTML Report', 
             reportTitles: '', 
             useWrapperFileDirectly: true
         ])
-        archiveArtifacts 'cypress/reports/**/*.html'
+        archiveArtifacts '**/cypress/reports/**/*.html'
     }
 }
 }
