@@ -30,17 +30,17 @@ pipeline {
     }
 
     post {
-        always {
-            publishHTML([
-                allowMissing: false, 
-                alwaysLinkToLastBuild: true, 
-                keepAll: true, 
-                reportDir: 'cypress/reports', 
-                reportFiles: '*.html', 
-                reportName: 'HTML Report', 
-                reportTitles: '', 
-                useWrapperFileDirectly: true
-            ])
-        }
+    always {
+        publishHTML([
+            allowMissing: false, 
+            alwaysLinkToLastBuild: true, 
+            keepAll: true, 
+            reportDir: 'cypress/reports', 
+            reportFiles: '*.html', 
+            reportName: 'HTML Report', 
+            reportTitles: '', 
+            useWrapperFileDirectly: true
+        ])
     }
+}
 }
