@@ -91,7 +91,7 @@ describe('User Creation', () => {
         CreateUserPage.clickOnSearch()
         let firstName = 'kiran'
         let lastName = 'Adhavade'
-        cy.get('#search').clear().type(firstName);
+        cy.get('#dt-search-0').clear().type(firstName);
         CreateUserPage.clickOnSearchButton()
 
         // Check if the user is found
