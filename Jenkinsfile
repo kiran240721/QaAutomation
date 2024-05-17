@@ -41,6 +41,7 @@ pipeline {
             reportTitles: '', 
             useWrapperFileDirectly: true
         ])
+        archiveArtifacts 'cypress/reports/**/*.html'
     }
 }
 }
