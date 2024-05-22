@@ -26,6 +26,7 @@ module.exports = defineConfig({
 
   projectId: "w74cjj",
   //npx cypress run --record --key 3582dc7f-9fa7-42b8-91f2-af005df8a7c4
+  //npx cypress run --record --key 3582dc7f-9fa7-42b8-91f2-af005df8a7c4  --parallel --ci-build-id TestExecution16
 
   //6da97b3b971d4f0c8a0fbf6cbf9ac0b7
   defaultCommandTimeout: 8000,
