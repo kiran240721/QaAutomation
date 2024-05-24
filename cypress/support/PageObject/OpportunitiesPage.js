@@ -83,7 +83,7 @@ class OpportunitiesPage {
   clickOnStartDate() {
     cy.get('#startDate').should('be.visible')
   }
-  clickOnSector() {
+  clickOnSector() { 
     return cy.get('#sector').select('CONSTRUCTION')
   }
 
